@@ -11,8 +11,9 @@
 import sys
 import cv
 import time
+import shutil
 
-filename = '/Users/fouad/dropbox/code/py/physics-final2012/close.mov'
+filename = 'moviename'
 
 def find_ball(image):
 
@@ -85,6 +86,7 @@ while True:
     imgname = 'Processed-'+name+'.JPG'
     print imgname
     cv.SaveImage(imgname, original)
+    shutil.move(imgname, 'processed/'+imgname)
     time.sleep(2)
     sys.exit(1)
   
